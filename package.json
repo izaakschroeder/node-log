@@ -1,0 +1,8 @@
+{
+	"name": "elasticsearch",
+	"version": "0.0.1",
+	"description": "A simple logging system.",
+	"author": "Izaak Schroeder",
+	"engine": "node >= 0.4.10",
+	"main": "log.js"
+}
