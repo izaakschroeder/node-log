@@ -22,7 +22,7 @@ function Log(context, providers, level) {
 	this.providers = providers.filter(function(provider) {
 		switch(typeof provider) {
 		case "object":
-			return provider instanceof Log.Logger;
+			return provider instanceof Stream;
 		default:
 			return false;
 		}
@@ -85,7 +85,7 @@ Log.prototype.instance = function(context, level) {
 Log.prototype.write = function(msg) {
 	if (msg.level < this.level)
 		return;
-	msg.context = this.context;
+	msg.context = msg.context || this.context;
 	this.emit("data", msg);
 }
 
